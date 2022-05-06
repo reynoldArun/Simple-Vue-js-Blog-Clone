@@ -2,8 +2,8 @@
  <div class="blog__container">
    <ul class="blog__list">
      <li>All Posts</li>
-     <li>Vegan Lifestyle</li>
-     <li>All Recipes</li>
+     <li>Veg</li>
+     <li>Non Veg</li>
      <li>Breakfast</li>
      <li>Salads/Salate</li>
      <li>More</li>
@@ -13,11 +13,11 @@
    <div class="wrapper">
         <div class="content" v-for="recipe in $store.state.recipes" :key="recipe.slug">
       <div class="blog__parent" @click="gotorecipe(recipe.slug)">
-        <img src="@/assets/chicken.jpg" alt="blog-recipe">
+       <img :src="recipe.img" alt="blog-recipe">
       <div class="blog__child">
         <div class="blog__top">
-          <p>{{recipe.chef}}</p>
-          <p>{{recipe.date}} {{recipe.postTime}}</p>
+          <p>{{recipe.writer}}</p>
+          <p>{{recipe.ratings}} {{recipe.reviwes}}</p>
         </div>
         <div class="blog__bottom">
           <h2>{{recipe.title}}</h2>
@@ -36,8 +36,8 @@ export default {
   methods: {
     gotorecipe(slug) {
       this.$router.push(`/blog/${slug}`)
-    }
-  }
+    },
+  },    
 }
 </script>
 

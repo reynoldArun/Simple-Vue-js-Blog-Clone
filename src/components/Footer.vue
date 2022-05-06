@@ -10,6 +10,7 @@
 .blog__footer {
     text-align: center;
     margin-top: 1.5rem;
+    cursor: pointer;
 }
 
 .blog__footer > i {
